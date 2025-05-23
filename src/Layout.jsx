@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import NavBar from "./components/NavBar";
 import { Outlet, useNavigate } from "react-router";
 import Footer from "./components/Footer";
@@ -11,6 +11,7 @@ const Layout = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const loggedUser = useSelector((state) => state.user);
+  const [error, setError] = useState("");
   const fetchUser = useCallback(async () => {
     try {
       const res = await axios.get(BASE_URL + "/profile/view", {
@@ -19,8 +20,10 @@ const Layout = () => {
       dispatch(addUser(res.data));
     } catch (error) {
       if (error.status === 401) navigate("/login");
-
-      console.error("Error fetching user data:", error);
+      setError(error?.response?.data || "Something went wrong");
+      setTimeout(() => {
+        setError("");
+      }, 3000);
     }
   }, [dispatch, navigate]);
 
@@ -32,6 +35,9 @@ const Layout = () => {
     <>
       <NavBar />
       <Outlet />
+      {error && (
+        <p className="text-center textarea-xl mt-5 text-red-500">{error}</p>
+      )}
       <Footer />
     </>
   );
