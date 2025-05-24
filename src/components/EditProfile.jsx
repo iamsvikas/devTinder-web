@@ -37,7 +37,7 @@ const EditProfile = () => {
   };
   return (
     <>
-      {user.firstName && (
+      {user?.firstName && (
         <div className="flex justify-center gap-10">
           <div className="flex justify-center">
             <div className="card card-border bg-base-300 w-96 pb-8">
