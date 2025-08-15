@@ -7,6 +7,11 @@ import { Provider } from "react-redux";
 import Feed from "./pages/Feed";
 import Connections from "./pages/Connections";
 import Requests from "./pages/Requests";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import ShippingPolicy from "./pages/ShippingPolicy";
+import TermsAndConditions from "./pages/TermsAndConditions";
+import CancellationAndRefundPolicy from "./pages/CancellationAndRefundPolicy";
+import ContactUs from "./pages/ContactUs";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,6 +22,14 @@ const router = createBrowserRouter([
       { path: "connections", element: <Connections /> },
       { path: "requests", element: <Requests /> },
       { path: "login", element: <Login /> },
+      { path: "privacy-policy", element: <PrivacyPolicy /> },
+      { path: "shipping-delivery-policy", element: <ShippingPolicy /> },
+      { path: "terms-and-conditions", element: <TermsAndConditions /> },
+      {
+        path: "cancellation-refund-policy",
+        element: <CancellationAndRefundPolicy />,
+      },
+      { path: "contact-us", element: <ContactUs /> },
     ],
   },
 ]);

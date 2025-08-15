@@ -1,8 +1,29 @@
 import React from "react";
+import { Link } from "react-router";
 
 const Footer = () => {
   return (
     <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content items-center p-4 fixed bottom-0">
+      <ul>
+        <li>
+          <Link to="/privacy-policy">Privacy Policy</Link>
+        </li>
+        <li>
+          <Link to="/shipping-delivery-policy">Shipping & Delivery Policy</Link>
+        </li>
+        <li>
+          <Link to="/terms-and-conditions">Terms & Conditions</Link>
+        </li>
+        <li>
+          <Link to="/cancellation-refund-policy">
+            Cancellation & Refund Policy
+          </Link>
+        </li>
+        <li>
+          <Link to="/contact-us">Contact Us</Link>
+        </li>
+      </ul>
+
       <aside className="grid-flow-col items-center">
         <svg
           width="36"
