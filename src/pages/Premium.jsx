@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const Premium = () => {
   const [isUserPremuim, setIsUserPremium] = useState(false);
   const verifyPremiumUser = async () => {
-    const res = await axios.get(BASE_URL + "/premuim/verify", {
+    const res = await axios.get(BASE_URL + "/premium/verify", {
       withCredentials: true,
     });
     if (res.status.isPremuim) setIsUserPremium(true);
