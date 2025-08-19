@@ -3,12 +3,19 @@ import { BASE_URL } from "../utils/constants";
 import { useEffect, useState } from "react";
 
 const Premium = () => {
-  const [isUserPremuim, setIsUserPremium] = useState(false);
+  const [isUserPremium, setIsUserPremium] = useState(false);
   const verifyPremiumUser = async () => {
+    console.log("hi");
+
     const res = await axios.get(BASE_URL + "/premium/verify", {
       withCredentials: true,
     });
-    if (res.status.isPremuim) setIsUserPremium(true);
+    console.log(res);
+
+    if (res.data.isPremium) {
+      setIsUserPremium(true);
+      console.log("changing");
+    }
   };
 
   const handleBuy = async (type) => {
@@ -42,7 +49,7 @@ const Premium = () => {
   useEffect(() => {
     verifyPremiumUser();
   }, []);
-  return isUserPremuim ? (
+  return isUserPremium ? (
     <h1>You are already a Premium User!</h1>
   ) : (
     <div className="flex w-400 m-10 mx-auto">
