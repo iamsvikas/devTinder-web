@@ -12,6 +12,7 @@ import ShippingPolicy from "./pages/ShippingPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import CancellationAndRefundPolicy from "./pages/CancellationAndRefundPolicy";
 import ContactUs from "./pages/ContactUs";
+import Premium from "./pages/Premium";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
       { path: "connections", element: <Connections /> },
       { path: "requests", element: <Requests /> },
       { path: "login", element: <Login /> },
+      { path: "premium", element: <Premium /> },
       { path: "privacy-policy", element: <PrivacyPolicy /> },
       { path: "shipping-delivery-policy", element: <ShippingPolicy /> },
       { path: "terms-and-conditions", element: <TermsAndConditions /> },
